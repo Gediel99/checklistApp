@@ -1,0 +1,15 @@
+
+List<Task> tasks = // lista de objetos Task
+
+List<Card> taskCards = tasks.map((task) => Card(
+  child: ListTile(
+    title: Text(task.title),
+    subtitle: Text(task.description),
+    trailing: Checkbox(
+      value: task.completed,
+      onChanged: (value) {
+        // atualiza a propriedade completed da tarefa com o novo valor
+      },
+    ),
+  ),
+)).toList();
